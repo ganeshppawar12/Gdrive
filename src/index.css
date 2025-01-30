@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+*{
+    font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+}
