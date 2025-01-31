@@ -1,14 +1,20 @@
 import React from "react";
 import { getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase-config";
+import { useNavigate } from 'react-router-dom';
+
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+
+
   const handleLogin = async () => {
     const provider = new GoogleAuthProvider(); 
    signInWithPopup(auth , provider).then(async(res)=>{
-    console.log(res);
+   
     if(res.user){
-      window.location.href = "/"
+      // window.location.href = "/"
+      navigate('/dashboard'); 
     }
    })
 
